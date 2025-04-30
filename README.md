@@ -2,7 +2,7 @@
 
 Site moderno e responsivo para uma pizzaria fictícia, desenvolvido com foco em experiência do usuário, visual atrativo e funcionalidades reais como sistema de cardápio interativo e carrinho de compras.
 
-![Capa do Projeto](./img/banner.png)
+![Capa do Projeto](./public/img/banner.png)
 
 ---
 
