@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzaria Best Napoli | As melhores pizzas da cidade</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+<body class="font-sans bg-gray-50">
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <i class="fas fa-pizza-slice text-red-500 text-3xl mr-2"></i>
+                <h1 class="text-2xl font-bold text-gray-800">Best Napoli</h1>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="text-gray-800 hover:text-red-500 font-medium">Início</a>
+                <a href="#menu" class="text-gray-800 hover:text-red-500 font-medium">Cardápio</a>
+                <a href="#about" class="text-gray-800 hover:text-red-500 font-medium">Sobre</a>
+                <a href="#contact" class="text-gray-800 hover:text-red-500 font-medium">Contato</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <button id="cart-button" class="relative">
+                    <i class="fas fa-shopping-cart text-gray-700 text-xl hover:text-red-500"></i>
+                    <span id="cart-count"
+                        class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                </button>
+                <button class="md:hidden" id="mobile-menu-button">
+                    <i class="fas fa-bars text-gray-700 text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-2 px-4 shadow-lg">
+            <a href="#home" class="block py-2 text-gray-800 hover:text-red-500">Início</a>
+            <a href="#menu" class="block py-2 text-gray-800 hover:text-red-500">Cardápio</a>
+            <a href="#about" class="block py-2 text-gray-800 hover:text-red-500">Sobre</a>
+            <a href="#contact" class="block py-2 text-gray-800 hover:text-red-500">Contato</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero min-h-screen flex items-center justify-center text-center text-white">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">As melhores pizzas da cidade</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Ingredientes frescos, massa artesanal e o verdadeiro
+                sabor da Itália</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#menu"
+                    class="bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-6 rounded-full transition duration-300">Ver
+                    Cardápio</a>
+                <a href="#contact"
+                    class="bg-transparent hover:bg-white hover:text-gray-900 text-white font-bold py-3 px-6 border-2 border-white rounded-full transition duration-300">Faça
+                    seu pedido</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Nosso Cardápio</h2>
+
+            <!-- Menu Tabs -->
+            <div class="flex justify-center mb-12 border-b border-gray-200">
+                <button class="menu-tab active px-6 py-3" data-category="pizzas">Pizzas</button>
+                <button class="menu-tab px-6 py-3" data-category="bebidas">Bebidas</button>
+                <button class="menu-tab px-6 py-3" data-category="sobremesas">Sobremesas</button>
+            </div>
+
+            <!-- Pizzas Menu -->
+            <div id="pizzas-menu" class="menu-category grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Pizza items will be loaded here -->
+            </div>
+
+            <!-- Drinks Menu (hidden by default) -->
+            <div id="bebidas-menu" class="menu-category hidden grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Drink items will be loaded here -->
+            </div>
+
+            <!-- Desserts Menu (hidden by default) -->
+            <div id="sobremesas-menu" class="menu-category hidden grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Dessert items will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-8 lg:mb-0 lg:pr-12">
+                    <img src="public/img/bellanapoli.png"
+                        alt="Pizzaiolo preparando pizza" class="rounded-lg shadow-xl w-full">
+                </div>
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Nossa História</h2>
+                    <p class="text-gray-600 mb-4">
+                        Inaugurada em 1992, a Best Napoli surgiu da paixão de uma família italiana pelas verdadeiras
+                        pizzas napolitanas. Começamos com um pequeno forno a lenha e receitas herdadas da nonna,
+                        trazendo ao Brasil o sabor original de Nápoles.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        Hoje, cada pizza servida ainda carrega esse mesmo cuidado: da massa fermentada lentamente por 48
+                        horas até os ingredientes frescos e selecionados. Na Best Napoli, tradição, sabor e
+                        hospitalidade andam sempre juntos.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-red-500 mr-2"></i>
+                            <span class="text-gray-700">Receita familiar</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-red-500 mr-2"></i>
+                            <span class="text-gray-700">Ingredientes selecionados</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-red-500 mr-2"></i>
+                            <span class="text-gray-700">Forno a lenha tradicional</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">O que dizem nossos clientes</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Cliente"
+                            class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Ana Silva</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Simplesmente sensacional! A pizza quatro queijos tem um sabor marcante e cremoso. Atendimento rápido e muito simpático."
+                    </p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Cliente"
+                            class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Carlos Mendes</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"A melhor pizzaria da cidade! Sempre peço a de frango com catupiry, e nunca falha. Ambiente acolhedor e entrega no horário."</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Cliente"
+                            class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Mariana Oliveira</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"As sobremesas são um espetáculo à parte. A pizza de chocolate com morango é perfeita para fechar a noite com chave de ouro!"
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Faça seu pedido</h2>
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2">
+                    <form class="bg-white p-8 rounded-lg shadow-sm">
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 mb-2">Nome</label>
+                            <input type="text" id="name"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="phone" class="block text-gray-700 mb-2">Telefone</label>
+                            <input type="tel" id="phone"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="address" class="block text-gray-700 mb-2">Endereço</label>
+                            <textarea id="address" rows="3"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"></textarea>
+                        </div>
+                        <div class="mb-6">
+                            <label for="order" class="block text-gray-700 mb-2">Seu pedido</label>
+                            <textarea id="order" rows="5"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300">Enviar
+                            Pedido</button>
+                    </form>
+                </div>
+                <div class="lg:w-1/2">
+                    <div class="bg-white p-8 rounded-lg shadow-sm h-full">
+                        <h3 class="text-xl font-bold text-gray-800 mb-6">Informações de contato</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-red-500 mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Endereço</h4>
+                                    <p class="text-gray-600">Rua das Pizzas, 123 - Centro<br>São Paulo - SP</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-phone-alt text-red-500 mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Telefone</h4>
+                                    <p class="text-gray-600">(11) 1234-5678</p>
+                                    <p class="text-gray-600">WhatsApp: (11) 98765-4321</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-clock text-red-500 mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Horário de funcionamento</h4>
+                                    <p class="text-gray-600">Terça a Quinta: 18h - 23h</p>
+                                    <p class="text-gray-600">Sexta e Sábado: 18h - 00h</p>
+                                    <p class="text-gray-600">Domingo: 18h - 22h</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                            <h4 class="font-bold text-gray-800 mb-4">Nos siga nas redes sociais</h4>
+                            <div class="flex space-x-4">
+                                <a href="#"
+                                    class="bg-blue-600 text-white p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-blue-700">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#"
+                                    class="bg-pink-600 text-white p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-pink-700">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#"
+                                    class="bg-blue-400 text-white p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-blue-500">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Modal -->
+    <div id="cart-modal" class="fixed inset-0 z-50 hidden overflow-y-auto">
+        <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 transition-opacity" aria-hidden="true">
+                <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+            </div>
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            <div
+                class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+                <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <div class="flex justify-between items-center border-b pb-4">
+                        <h3 class="text-lg font-medium text-gray-900">Seu Carrinho</h3>
+                        <button id="close-cart" class="text-gray-500 hover:text-gray-700">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div id="cart-items" class="mt-4 max-h-96 overflow-y-auto">
+                        <!-- Cart items will be loaded here -->
+                        <p class="text-gray-500 text-center py-8">Seu carrinho está vazio</p>
+                    </div>
+                    <div class="mt-4 border-t pt-4">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium">Subtotal:</span>
+                            <span id="cart-subtotal" class="font-medium">R$ 0,00</span>
+                        </div>
+                        <div class="flex justify-between mb-4">
+                            <span class="font-medium">Taxa de entrega:</span>
+                            <span id="delivery-fee" class="font-medium">R$ 8,00</span>
+                        </div>
+                        <div class="flex justify-between text-lg font-bold border-t pt-2">
+                            <span>Total:</span>
+                            <span id="cart-total">R$ 8,00</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                    <button type="button"
+                        class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-500 text-base font-medium text-white hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm">
+                        Finalizar Pedido
+                    </button>
+                    <button id="continue-shopping" type="button"
+                        class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
+                        Continuar Comprando
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Best Napoli</h3>
+                    <p class="text-gray-400">Sabor original da Itália com um toque brasileiro. Feita com paixão e ingredientes de verdade.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Links Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white">Início</a></li>
+                        <li><a href="#menu" class="text-gray-400 hover:text-white">Cardápio</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white">Sobre</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white">Contato</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Horário</h4>
+                    <ul class="text-gray-400 space-y-2">
+                        <li>Terça a Quinta: 18h - 23h</li>
+                        <li>Sexta e Sábado: 18h - 00h</li>
+                        <li>Domingo: 18h - 22h</li>
+                        <li>Segunda: Fechado</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-2">Cadastre-se para receber nossas promoções</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Seu e-mail"
+                            class="px-4 py-2 rounded-l-lg text-gray-800 w-full focus:outline-none">
+                        <button class="bg-red-500 hover:bg-red-600 px-4 py-2 rounded-r-lg">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+                <p>&copy; 2023 Pizzaria Best Napoli. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="public/js/script.js"></script>
+
+</body>
+
+</html>
